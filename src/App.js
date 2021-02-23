@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import About from './components/About'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Modal from './components/Modal'
 
 function App() {
   const [posts, setPosts] = useState([
@@ -25,10 +26,17 @@ function App() {
     },
     {
       id: 4,
-      title: 'Dis-ease',
-      description: 'Pandemic life and productivity...'
+      title: 'Good Days',
+      description: '...'
+    },
+    {
+      id: 5,
+      title: 'Time Alone With You',
+      description: 'Grammy-nominated...'
     }
   ])
+
+  const [selectedPost, setSelectedPost] = useState({});
 
   return (
     <Router>
@@ -36,9 +44,16 @@ function App() {
         <Route path='/' exact render={(props) => (
           <>
             <Header />
+            <br></br>
             <div className='container'>
-              <Posts posts={posts} />
+              <Posts posts={posts} setSelectedPost={setSelectedPost}/>
             </div>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            { (!(JSON.stringify(selectedPost) == JSON.stringify({}))) && <Modal selectedPost={selectedPost} setSelectedPost={setSelectedPost}/> }
           </>
         )} />
         <Route path='/about' component={About} />

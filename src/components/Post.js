@@ -1,16 +1,11 @@
 import React from 'react'
-import blogPage from './blogPage.js'
 
-function Post({ post, posts }) {
-    const blogPage = (e) => {
-        console.log(e)
-        console.log(posts.filter((post) => <h3>post.title</h3> == e.target))
-    }
+function Post({ post, posts, setSelectedPost }) {
     return (
-        <div className='post' onClick={blogPage}>
-            <h3>{post.title}
-            </h3>
-            <p>{post.description}</p>
+        <div className='post' style={{ cursor: 'default'}}>
+            <h3><b>{post.title}</b></h3>
+            <p style={{ display: "inline-block" }}>{post.description}</p>
+            <button className="btn" onClick={() => setSelectedPost(posts[post.id-1])}>→</button>
         </div>
     )
 }
