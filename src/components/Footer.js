@@ -6,7 +6,7 @@ const Footer = () => {
         <footer>
             <div>
                 <Link to='/about' className="link"><b>about</b></Link>
-                <p style={{ color: 'lightgrey'}}>&copy; 2021 | made with ☕ by Amy Nguyen</p>
+                <p style={{ color: 'lightgrey' }}>&copy; 2021 | made with ☕ by Amy Nguyen</p>
             </div>
         </footer>
     )

@@ -46,14 +46,14 @@ function App() {
             <Header />
             <br></br>
             <div className='container'>
-              <Posts posts={posts} setSelectedPost={setSelectedPost}/>
+              <Posts posts={posts} setSelectedPost={setSelectedPost} />
             </div>
             <br></br>
             <br></br>
             <br></br>
             <br></br>
             <br></br>
-            { (!(JSON.stringify(selectedPost) == JSON.stringify({}))) && <Modal selectedPost={selectedPost} setSelectedPost={setSelectedPost}/> }
+            {(!(JSON.stringify(selectedPost) == JSON.stringify({}))) && <Modal selectedPost={selectedPost} setSelectedPost={setSelectedPost} />}
           </>
         )} />
         <Route path='/about' component={About} />

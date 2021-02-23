@@ -61,35 +61,50 @@ body {
   background: rgba(0,0,0,0.7);
 }
 
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+  }
+}
+
 .modal {
-  max-width: 600px;
-  margin: 50px auto;
-  overflow: auto;
-  min-height: 50%;
-  border: 2px solid white;
+  position: relative;
+  top: 25%;
+  left: 50%;
+  width: 50%;
+  height: 50%; 
+  overflow: hidden;
   padding: 40px;
   border-radius: 10px;
-  background-color: #85d8db;
+  background-color: white;
+  animation:modalFade 0.7s ease-out forwards;
+
 }
 
 .modalbtn {
   position: absolute;
-  background-color:grey;
-  top: 0;
-  right: 0;
-  color: #fff;
+  width:20px;
+  height:20px;
+  right:18px;
+  top:18px;
+  color:#85d8db;
   border: none;
-  padding: 8px 15px;
-  margin: 5px;
-  border-radius: 50%;
   cursor: pointer;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 20px;
   font-family: inherit;
+  background-color: white;
+
 }
 
 .modalbtn:hover {
-  background-color: lightgray;
+  color: lightgray;
 }
 
 .link {
