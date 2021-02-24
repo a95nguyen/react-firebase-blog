@@ -1,8 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Header from './Header'
+import { useLayoutEffect } from 'react'
 
 function About() {
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
+
     return (
         <div>
             <Header />
@@ -16,7 +21,8 @@ function About() {
             </div>
             <br></br>
             <br></br>
-        </div>
+            <br></br>
+          </div>
     )
 }
 

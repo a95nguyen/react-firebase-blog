@@ -50,6 +50,7 @@ body {
   padding: 10px 20px;
   cursor: pointer;
   position: relative;
+  border-radius: 10px;
 }
 
 .backdrop {
@@ -62,29 +63,25 @@ body {
 }
 
 @keyframes modalFade {
-  from {
+  0%{
     opacity: 0;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(-50%);
-    transform: translateX(-50%);
+    transform: translateY(-10px);
   }
 }
 
 .modal {
   position: relative;
-  top: 25%;
-  left: 50%;
+  top: 20%;
+  left: 25%;
   width: 50%;
   height: 50%; 
-  overflow: hidden;
   padding: 40px;
   border-radius: 10px;
   background-color: white;
-  animation:modalFade 0.7s ease-out forwards;
-
+  animation: modalFade 0.4s ease-in forwards;
+  min-height: 50%;
+  overflow: auto;
+  min-height: 60%;
 }
 
 .modalbtn {
@@ -96,11 +93,9 @@ body {
   color:#85d8db;
   border: none;
   cursor: pointer;
-  text-decoration: none;
   font-size: 20px;
   font-family: inherit;
   background-color: white;
-
 }
 
 .modalbtn:hover {
@@ -110,11 +105,31 @@ body {
 .link {
   color: #85d8db;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 950;
 }
 
 .link:hover {
   color: lightgray;
+  font-weight: 950;
+}
+
+.scroll-to-top {
+  position: fixed;
+  right: 4rem;
+  bottom: 0.5rem;
+  width: 1px;
+  height: auto;
+  animation: fadeIn 700ms ease-in-out 1s both;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 footer {

@@ -1,7 +1,9 @@
 import React from 'react'
 import logo from './topimage.png'
+import {useLayoutEffect} from 'react'
 
 function Header() {
+
     return (
         <div>
             <img src={logo} style={{ width:'100%', height:'auto'}} alt="Logo" />;
