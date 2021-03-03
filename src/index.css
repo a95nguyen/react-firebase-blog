@@ -47,7 +47,10 @@ body {
 .post {
   background: #f4f4f4;
   margin: 5px;
-  padding: 10px 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 50px;
   cursor: pointer;
   position: relative;
   border-radius: 10px;
@@ -82,9 +85,11 @@ body {
   min-height: 50%;
   overflow: auto;
   min-height: 60%;
+  overflow-x: hidden;
 }
 
 .modalbtn {
+  position: sticky;
   position: absolute;
   width:20px;
   height:20px;
@@ -100,6 +105,10 @@ body {
 
 .modalbtn:hover {
   color: lightgray;
+}
+
+.img-wrap {
+  opacity: 0.8;
 }
 
 .link {

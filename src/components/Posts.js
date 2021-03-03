@@ -3,7 +3,6 @@ import Post from './Post.js'
 import { motion, AnimateSharedLayout } from 'framer-motion'
 
 function Posts({ posts, setSelectedPost }) {
-
     return (
         <div>
             {posts.map((post) => (

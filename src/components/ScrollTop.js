@@ -6,15 +6,13 @@ export default function ScrollToTop() {
 
   // Show button when page is scorlled upto given distance
   const toggleVisibility = () => {
-    if (window.pageYOffset > 300) {
+    if (window.pageYOffset > 200) {
       setIsVisible(true);
     } else {
       setIsVisible(false);
     }
   };
 
-  // Set the top cordinate to 0
-  // make scrolling smooth
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -28,9 +26,9 @@ export default function ScrollToTop() {
 
   return (
     <div className="scroll-to-top">
-      {isVisible && 
+      {isVisible &&
         <div onClick={scrollToTop}>
-          <img src={logo} alt='Go to top'/>
+          <img src={logo} alt='Scroll to top' />
         </div>}
     </div>
   );
