@@ -1,14 +1,44 @@
 import React from 'react'
 import Post from './Post.js'
 import { motion, AnimateSharedLayout } from 'framer-motion'
+import { useState } from "react";
+import { getFirebase } from '../Firebase';
 
-function Posts({ posts, setSelectedPost }) {
+function Posts({ setSelectedPost }) {
+    // loading posts state
+    const [loading, setLoading] = useState(true);
+
+    // array of blogPosts state
+    const [blogPosts, setBlogPosts] = useState([]);
+
+    if (loading && !blogPosts.length) {
+        getFirebase()
+            .database()
+            .ref("/posts")
+            //.orderByChild("dateFormatted")
+            .once("value")
+            .then(snapshot => {
+                let posts = [];
+                const snapshotVal = snapshot.val();
+                for (let slug in snapshotVal) {
+                    posts.push(snapshotVal[slug]);
+                }
+
+                setBlogPosts(posts);
+                setLoading(false);
+            });
+    }
+
+    if (loading) {
+        return <h1>Loading...</h1>;
+    }
+
     return (
         <div>
-            {posts.map((post) => (
+            {blogPosts.map((post) => (
                 <Post key={post.id}
                     post={post}
-                    posts={posts}
+                    posts={blogPosts}
                     setSelectedPost={setSelectedPost} />
             ))}
         </div>
