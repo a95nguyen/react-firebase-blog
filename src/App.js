@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Modal from './components/Modal'
 import ScrollToTopBtn from "./components/ScrollTop";
 import Scroll from './components/Scroll.js'
+import AddPost from './components/AddPost'
 
 function App() {
   // selectedPost when button is clicked
@@ -33,6 +34,7 @@ function App() {
             </>
           )} />
           <Route path='/about' component={About} />
+          <Route path='/addpost' component={AddPost} />
           <Footer />
         </div>
       </Scroll>

@@ -30,7 +30,7 @@ function Posts({ setSelectedPost }) {
     }
 
     if (loading) {
-        return <h1>Loading...</h1>;
+        return <h3>Loading...</h3>;
     }
 
     return (
