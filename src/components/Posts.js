@@ -20,11 +20,12 @@ function Posts({ setSelectedPost }) {
             .then(snapshot => {
                 let posts = [];
                 const snapshotVal = snapshot.val();
-                for (let slug in snapshotVal) {
-                    posts.push(snapshotVal[slug]);
+                for (let id in snapshotVal) {
+                    posts.push(snapshotVal[id]);
                 }
 
                 setBlogPosts(posts);
+                console.log(posts);
                 setLoading(false);
             });
     }

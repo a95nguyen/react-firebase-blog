@@ -146,6 +146,21 @@ body {
   }
 }
 
+.addPost {
+  border: none;
+  color: #fff;
+  background-color: #85d8db;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.addPost:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
 footer {
   text-align: center;
 }
