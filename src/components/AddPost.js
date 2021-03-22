@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './Header'
 import { useState } from 'react'
 import { getFirebase } from "../Firebase";
+import { useLayoutEffect } from 'react'
 
 // title, gif, quote, description
 const labelStyles = {
@@ -34,19 +35,23 @@ function AddPost({ history }) {
 
         // getting number of children in Firebase
         let numChild = await postListRef.once("value")
-        .then(function(snapshot) {
-            return snapshot.numChildren();
-        })
-        
-        // console.log(numChild)
-        var newPostRef = postListRef.push();
-        newPostRef.set({
-            title,
-            quote,
-            id: numChild + 1,
-            gif,
-            description
-        })
+            .then(function (snapshot) {
+                return snapshot.numChildren();
+            })
+
+        if (quote == "" || title == "" || gif == "" || description == "") {
+            return
+        } else {
+            var newPostRef = postListRef.push();
+            newPostRef.set({
+                title,
+                quote,
+                id: numChild + 1,
+                gif,
+                description
+            })
+            history.push(`/`)
+        }
     }
 
     return (

@@ -3,8 +3,10 @@ import Post from './Post.js'
 import { motion, AnimateSharedLayout } from 'framer-motion'
 import { useState } from "react";
 import { getFirebase } from '../Firebase';
+import { useLayoutEffect } from 'react'
 
 function Posts({ setSelectedPost }) {
+
     // loading posts state
     const [loading, setLoading] = useState(true);
 
