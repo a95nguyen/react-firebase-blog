@@ -3,6 +3,7 @@ import Header from './Header'
 import { useState } from 'react'
 import { getFirebase } from "../Firebase";
 import { useLayoutEffect } from 'react'
+import { Alert } from 'react-alert'
 
 // title, gif, quote, description
 const labelStyles = {
@@ -28,7 +29,11 @@ function AddPost({ history }) {
     const [quote, setQuote] = useState("");
     const [gif, setGif] = useState("");
     const [description, setDescription] = useState("");
-
+    const [errorMessage, setErrorMessage] = useState("");
+    const handleClick = () => {
+        setErrorMessage("Example error message!")
+      }
+      
     // is it okay to be an async function.. i don't know
     async function createPost() {
         var postListRef = getFirebase().database().ref('posts')
@@ -40,7 +45,7 @@ function AddPost({ history }) {
             })
 
         if (quote == "" || title == "" || gif == "" || description == "") {
-            return
+            alert("Error! One or more fields were left empty.")
         } else {
             var newPostRef = postListRef.push();
             newPostRef.set({
