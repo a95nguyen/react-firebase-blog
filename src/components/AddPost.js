@@ -34,7 +34,7 @@ function AddPost({ history }) {
         setErrorMessage("Example error message!")
       }
       
-    // is it okay to be an async function.. i don't know
+    // async createPost
     async function createPost() {
         var postListRef = getFirebase().database().ref('posts')
 
